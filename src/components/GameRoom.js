@@ -46,7 +46,6 @@ function GameRoom() {
 
   useEffect(() => {
     const resizer = (e) => {
-      console.log(e.target.innerWidth);
       setDimensions({
         with: e.target.innerWidth,
         height: e.target.innerHeight,
@@ -70,11 +69,8 @@ function GameRoom() {
     let isWining = false;
     selectedAnswers.forEach(({ answer: { answer, questionIndex } }) => {
       games.forEach(({ correct_answer }, index) => {
-        console.log({ index, questionIndex });
         if (questionIndex === index) {
-          console.log({ checking: true });
           if (answer !== correct_answer) {
-            console.log({ failed: true });
             isWining = false;
             return;
           }
@@ -83,7 +79,6 @@ function GameRoom() {
       });
     });
     setWon(isWining);
-    console.log({ isWining });
   }
 
   if (fetchGameFailed && !isLoading) {

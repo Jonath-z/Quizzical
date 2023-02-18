@@ -10,10 +10,6 @@ export default function QuestionCard({
   const [selectedAnswer, setSelectedAnswer] = useState("");
   const { question: questionStatement, all_answers, correct_answer } = question;
 
-  useEffect(() => {
-    console.log({ correct_answer });
-  }, [correct_answer, question]);
-
   return (
     <div className="mb-5">
       <div className="flex flex-col gap-3 max-w-4xl border-b border-solid border-primary-300">
