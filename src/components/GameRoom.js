@@ -78,7 +78,7 @@ function GameRoom() {
         }
       });
     });
-    setWon(isWining);
+    setWon(isWining && selectedAnswers.length === games.length);
   }
 
   if (fetchGameFailed && !isLoading) {

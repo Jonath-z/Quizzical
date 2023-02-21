@@ -1,4 +1,5 @@
 import { useCheckResult } from "../App";
+import formatHTMLUnicode from "./helpers/formatHTMLUniCode";
 
 export default function AnswerCard({
   answer,
@@ -15,17 +16,19 @@ export default function AnswerCard({
         selectedAnswer === answer
           ? `text-white ${
               isChecked
-                ? correctAnswer !== answer
+                ? correctAnswer !== formatHTMLUnicode(answer)
                   ? "bg-red-400"
                   : "bg-green-400"
                 : "bg-primary-300"
             }`
           : `text-primary-500 ${
-              isChecked && correctAnswer === answer && "bg-green-400"
+              isChecked &&
+              correctAnswer === formatHTMLUnicode(answer) &&
+              "bg-green-400"
             }`
       } font-karla py-2 px-5 border border-solid border-primary-500 rounded-2xl`}
     >
-      {answer}
+      {formatHTMLUnicode(answer)}
     </div>
   );
 }
