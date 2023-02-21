@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import AnswerCard from "./AnswerCard";
+import formatHTMLUnicode from "./helpers/formatHTMLUniCode";
 
 export default function QuestionCard({
   question,
@@ -14,7 +15,7 @@ export default function QuestionCard({
     <div className="mb-5">
       <div className="flex flex-col gap-3 max-w-4xl border-b border-solid border-primary-300">
         <h3 className="text-xl font-bold font-karla text-primary-500">
-          {questionStatement}
+          {formatHTMLUnicode(questionStatement)}
         </h3>
 
         <div className="flex flex-wrap gap-4 mb-5">
